@@ -1,11 +1,20 @@
+// src/components/Footer.js
 import React from 'react';
+import styled from 'styled-components';
 
-function Footer() {
+const FooterWrapper = styled.footer`
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+`;
+
+const Footer = () => {
   return (
-    <footer>
-      <p>&copy; 2024 Ayurvata</p>
-    </footer>
+    <FooterWrapper>
+      <p>&copy; {new Date().getFullYear()} Ayurvata. All rights reserved.</p>
+    </FooterWrapper>
   );
-}
+};
 
 export default Footer;

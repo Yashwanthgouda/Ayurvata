@@ -10,7 +10,7 @@ body {
   }
   
   header {
-    background-color: #4CAF50;
+    background-color: #d2dfd2;
     color: white;
     padding: 10px 0;
   }
@@ -26,7 +26,7 @@ body {
   }
   
   footer {
-    background-color: #4CAF50;
+    background-color: #5c6b5c;
     color: white;
     padding: 10px 0;
     position: fixed;
