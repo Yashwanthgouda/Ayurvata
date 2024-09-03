@@ -19,6 +19,9 @@ const PlantCard = styled.div`
   margin: 10px;
   overflow: hidden;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure space between content and button */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -35,11 +38,17 @@ const PlantImage = styled.img`
 
 const PlantDetails = styled.div`
   padding: 15px;
+  flex: 1; /* Allow this section to expand and push the button to the bottom */
 `;
 
 const PlantName = styled.h3`
   font-size: 1.5rem;
   margin: 0;
+`;
+
+const ScientificName = styled.span`
+  font-style: italic;
+  color: #555;
 `;
 
 const PlantDescription = styled.p`
@@ -49,7 +58,7 @@ const PlantDescription = styled.p`
 
 const ExploreButton = styled(Link)`
   display: inline-block;
-  margin-top: 10px;
+  margin-top: auto; /* Push button to the bottom */
   padding: 10px 20px;
   color: #fff;
   background-color: green;
@@ -70,12 +79,12 @@ const PlantList = () => {
         <PlantCard key={plant.id}>
           <PlantImage src={plant.image} alt={plant.name} />
           <PlantDetails>
-            <PlantName>{plant.name}</PlantName>
+            <PlantName>{plant.name} <ScientificName>({plant.scientificName})</ScientificName></PlantName>
             <PlantDescription>{plant.description}</PlantDescription>
-            <ExploreButton to={`/plants/${plant.id}`}>
-              View Details
-            </ExploreButton>
           </PlantDetails>
+          <ExploreButton to={`/plants/${plant.id}`}>
+            View Details
+          </ExploreButton>
         </PlantCard>
       ))}
     </PlantListWrapper>
